@@ -1,0 +1,19 @@
+{
+    "name": "hostnet/eetlijst",
+    "description": "Calculation of the lunch",
+    "license": "proprietary",
+    "require": {
+        "php": ">=5.3",
+        "pear-pear/Auth": ">=1.6.4"
+    },
+    "minimum-stability": "stable",
+    "repositories": [
+        {
+            "type":"composer",
+            "url": "http://packagist.hostnetbv.nl"
+        }
+    ],
+    "autoload": {
+        "classmap": ["src/"]
+    }
+}

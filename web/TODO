@@ -1,0 +1,18 @@
+ToDo's voor de nieuwe eetlijst:
+
+***FILES***
+./admin/add_user.php
+./admin/admin.php
+./admin/index.php
+./admin/insert_add_user.php
+./admin/insert_profile_ext.php
+./admin/kosten.php
+./admin/mail.php
+./admin/profile_ext.php
+./class/user.class.php <- LDAP class login function
+
+***Nieuwe Features***
+LDAP verhaal
+Verrekenen / Koken
+Kleinere bedagen doorsluizen als verrekening
+Mutatie

@@ -1,0 +1,51 @@
+/**Username + gekookt + ratio 2
+
+SELECT username AS User, count( users.id ) AS Gekookt, ROUND( IFNULL( SUM( exp ) / SUM( number ) , 0 ) , 2 ) AS ratio2
+FROM expenses
+JOIN users ON expenses.user_id = users.id
+WHERE exp_date >= '2006-05-31'
+GROUP BY users.id
+
+
+/** Username + meegegeten
+
+SELECT username, count(*) as gegeten FROM `exp_detail` JOIN users on exp_detail.user_id = users.id where exp_date >= '2006-05-31' group by users.id
+
+
+
+/** Totaal aantal eeters binnen een periode
+SELECT  sum(nb) as totaaleeters FROM `exp_detail` where exp_date >= '2006-05-31'
+
+
+/** Voor hoevel mensen gekookt per gebruiker
+SELECT users.id as Userid, username AS User, sum( number ) AS Voormensengekookt
+FROM expenses
+JOIN users ON expenses.user_id = users.id
+WHERE exp_date >= '2006-05-31'
+GROUP BY users.id
+
+/** Hoevaak meegegeten per gebuiker: (incl dubbel telling)
+SELECT  username, sum(nb) as Aantalkeermeegegeten FROM `exp_detail` JOIN users on users.id = exp_detail.user_id where exp_date >= '2006-05-31' group by users.id
+
+
+/** 
+select username, sum(number) totaalvoorgekookt, sum(nb) as totaaleeters FROM expenses JOIN users on users.id = expenses.user_id JOIN exp_detail on expenses.id = exp_detail.exp_id
+
+
+
+
+
+
+
+
+
+
+
+SELECT users.id as Userid, username AS User, sum( number ) AS Voormensengekookt
+FROM expenses
+JOIN users ON expenses.user_id = users.id
+WHERE exp_date >= '2006-05-31'
+GROUP BY users.id
+
+
+

@@ -1,0 +1,62 @@
+v 0.6.8 //11-12-05
+- index.php en login.php samengevoegd (html)
+
+v 0.6.7 //18-08-05
+- php herschreven in classes
+- enkele kolommen hernoemd in tabel 'enroll' en  'e_detail'
+- wat kleine aanpassingen
+
+v 0.6.6 //04-08-05
+- added enroll option!
+- changed layout, buttons
+- list-option (5 rows or all)
+
+v 0.6.5 //23-05-05
+- changed layout
+- html/layout conform W3C-standards.
+- site now compatible with Firefox/Mozilla
+- renamed column 'update' to 'updated' in table 'site'
+
+v 0.6.4 //12-05-05
+- new table 'users' ->now complete userprofile
+- changed form-layout (css)
+- setcookie() settings changed
+- function check_input($input,$what)
+- function mysql_date($formdate)
+- function validate input emailaddress (javascript)
+
+V 0.6.3 //05-05-05
+- added adminpanel (add/edit userprofiles, text, title, version)
+- renamed column 'user' to 'user_level' in table 'users'
+- added table 'site' ->title,text,update now in db
+
+
+V 0.6.2 // 07-03-05
+- added userlevels 
+	-> god-mode for admin
+	-> admin-files protected
+- minor fixes
+
+V 0.6.1
+- fix $number (array) in insert_form2.php & insert_edit.php
+- renamed column 'number' to 'nb' in table 'exp_detail'
+- check "date > exp_from" replaced from insert_form2.php to form2.php
+- username correct displayed in form2/php (session/session_cache)
+- added admin/kosten.php
+- added admin/mail.php
+
+V 0.6.0
+- completely rewritten the database so the number of users is variable.
+- php-code rewritten
+
+V 0.5.0
+- added loginsystem
+- added possibility to edit userprofiles
+- added possibility to edit submitted costs 
+
+V 0.4.0
+- this version didnt make it, i rewrote the database but it became terribly slow.
+
+V 0.3.0
+- added some input-checks
+- some minor fixes
