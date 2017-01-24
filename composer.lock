@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "62c2f3f67d4aabb6b7bac11af364d599",
+    "content-hash": "dfae242f6e251831c40c4f042cc35b25",
     "packages": [
         {
             "name": "pear-pear.php.net/Auth",
