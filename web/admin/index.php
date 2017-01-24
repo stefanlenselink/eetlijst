@@ -1,33 +1,33 @@
-<? 
-require('../functions.php');  
-if(FALSE!==($rDbConn=connectdb()))  
-{  
-    if(!check_login($rDbConn))  
-    {  
-        header('location: ../login.php');  
-        exit;  
-    }  
-	 
-	elseif(!check_userlevel(9)) 
-    { 
-        echo ('access denied');   
-		exit; 
-	} 
+<?
+require('../functions.php');
+if(FALSE!==($rDbConn=connectdb()))
+{
+    if(!check_login($rDbConn))
+    {
+        header('location: ../login.php');
+        exit;
+    }
 
-	
-	$query = mysql_query("SELECT * FROM site LIMIT 1");
-	$obj = mysql_fetch_array($query);
+	elseif(!check_userlevel(9))
+    {
+        echo ('access denied');
+		exit;
+	}
 
-	//Timestamp to date 
+
+	$query = mysqli_query($rDbConn, "SELECT * FROM site LIMIT 1");
+	$obj = mysqli_fetch_array($query);
+
+	//Timestamp to date
 	$update = $obj['updated'];
 	$year = substr($update, 0, 4);
 	$month = substr($update, 4, 2);
 	$day = substr($update, 6, 2);
 	$updated = date('d M Y', mktime(0, 0, 0, $month, $day, $year));
-	
+
 	echo('
 	<HTML>
-	<head>	
+	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<link href="../eetlijst.css" rel="stylesheet" type="text/css">
 	<title>Adminpage&nbsp;'.$obj['title'].'</title>
@@ -45,14 +45,14 @@ if(FALSE!==($rDbConn=connectdb()))
 		<td width="83">&nbsp;</td>
 		<td width="462">&nbsp;</td>
 	  </tr>
-	<form name="admins" method="post" action="insert_admin.php">	
+	<form name="admins" method="post" action="insert_admin.php">
 	  <tr>
 		<td height="21" align="left" valign="baseline" class="h2">Title</td>
-		<td class="h2" align="right"><input type="text" name="title" value="'.$obj['title'].'" size="66" class="input"></td> 
+		<td class="h2" align="right"><input type="text" name="title" value="'.$obj['title'].'" size="66" class="input"></td>
 	  </tr>
 	  <tr height="5">
 		<td>&nbsp;</td>
-		<td>&nbsp;</td>  
+		<td>&nbsp;</td>
 	  </tr>
 	  <tr>
 		<td height="21" align="left" valign="baseline" class="h2">Version</td>
@@ -68,18 +68,18 @@ if(FALSE!==($rDbConn=connectdb()))
 	  </tr>
 	  <tr height="5">
 		<td>&nbsp;</td>
-		<td>&nbsp;</td>  
+		<td>&nbsp;</td>
 	  </tr>
 	  <tr>
 		<td valign="baseline" align="left" class="h2">&nbsp;</td>
 		<td align="right" class="h2">
 			<input type="hidden" name="verzonden" value="admin">
 			<input type="submit" value="Opslaan"></td>
-	  </tr> 
+	  </tr>
 	</form>
 	  <tr height="5">
 		<td>&nbsp;</td>
-		<td>&nbsp;</td>  
+		<td>&nbsp;</td>
 	  </tr>
 	  <tr height="5">
 		<td valign="baseline" align="left" class="h2">Users ->> click on username to edit!</td>
@@ -104,12 +104,12 @@ if(FALSE!==($rDbConn=connectdb()))
 				<td class="h1" width ="84" align="left">Rekeningnr</td>
 				<td class="h1" width ="90" align="left">te</td>
 			 </tr>
-	'); 
-	$query = mysql_query("SELECT *,
+	');
+	$query = mysqli_query($rDbConn, "SELECT *,
 							  DATE_FORMAT(birthdate,'%d-%m-%Y') AS birthdate,
 							  DATE_FORMAT(user_in,'%d-%m-%Y') AS user_in,
 							  DATE_FORMAT(user_out,'%d-%m-%Y') AS user_out FROM users ORDER BY id DESC");
-	while ($obj = mysql_fetch_array($query)) 
+	while ($obj = mysqli_fetch_array($query))
 	{
 	echo(' <tr height="15">
 			<td class="h3">'.$obj['id'].'</td>
@@ -134,7 +134,7 @@ if(FALSE!==($rDbConn=connectdb()))
 	  </tr>
 	 <tr height="5">
 		<td>&nbsp;</td>
-		<td>&nbsp;</td>  
+		<td>&nbsp;</td>
 	 </tr>
 	 <tr>
 		<td colspan="2" valign="baseline" align="center" class="h2">

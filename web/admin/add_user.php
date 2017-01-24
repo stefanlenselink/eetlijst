@@ -114,7 +114,7 @@ if(FALSE!==($rDbConn=connectdb()))
 	</html>
 	');
 
-    mysql_close($rDbConn);
+    mysqli_close($rDbConn);
 }
 ?>
 

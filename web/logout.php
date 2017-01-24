@@ -7,7 +7,7 @@ if(FALSE!==($rDbConn=connectdb()))
     //wordt hieronder behandeld
     clean_up($rDbConn,$_SESSION['user_id']);
 
-    mysql_close($rDbConn);
+    mysqli_close($rDbConn);
 }
 setcookie('validate','',time(),'/','heemskerkstraat.nl');
 setcookie('user_id',0,time(),'/','heemskerkstraat.nl');

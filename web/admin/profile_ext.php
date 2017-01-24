@@ -1,25 +1,25 @@
 <?php
 ///inloggen db
-require('../functions.php');  
-if(FALSE!==($rDbConn=connectdb()))  
-{  
-    if(!check_login($rDbConn))  
-    {  
-        header('location: ../login.php');  
-        exit;  
-    }  
-	 
-	elseif(!check_userlevel(9)) 
-    { 
-        echo ('access denied');   
-		exit; 
-	} 
+require('../functions.php');
+if(FALSE!==($rDbConn=connectdb()))
+{
+    if(!check_login($rDbConn))
+    {
+        header('location: ../login.php');
+        exit;
+    }
+
+	elseif(!check_userlevel(9))
+    {
+        echo ('access denied');
+		exit;
+	}
 
 	$querystring = "SELECT *, DATE_FORMAT(birthdate,'%d-%m-%Y') AS birthdate,
 							  DATE_FORMAT(user_in,'%d-%m-%Y') AS user_in,
 							  DATE_FORMAT(user_out,'%d-%m-%Y') AS user_out FROM users where id='".$id."' ";
-	$query		 = mysql_query($querystring); 
-	$obj 		 = mysql_fetch_array($query);    
+	$query		 = mysqli_query($rDbConn, $querystring);
+	$obj 		 = mysqli_fetch_array($query);
 
 	echo('
 	<html>
@@ -37,7 +37,7 @@ if(FALSE!==($rDbConn=connectdb()))
 	 <tr>
 		<td class="h1" align="left">Username</td>
 		<td class="h2" align="right"><input type="text" name="username" value="'.$obj['username'].'" class="input_2"></td>
-	 </tr> 
+	 </tr>
 	 <tr>
 		<td class="h1" align="left">Password</td>
 		<td class="h2" align="right"><input type="password" name="password" value="" class="input_2"></td>
@@ -98,20 +98,20 @@ if(FALSE!==($rDbConn=connectdb()))
 		<td class="h1"></td>
 		<td align="right" class="h2">
 			<input type="submit" value="Verwijder" name="delete" class="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="submit" value="Wijzig" class="button"> 
+			<input type="submit" value="Wijzig" class="button">
 			<input type="hidden" name="profile_id" value="'.$id.'">
 			<input type="hidden" name="verzonden" value="profile_ext">
 		</td>
 	 </tr>
 	<table>
-	
-		
+
+
 	</form>
 	</body>
 	</html>
 
 	');
-    mysql_close($rDbConn);
+    mysqli_close($rDbConn);
 }
 ?>
 

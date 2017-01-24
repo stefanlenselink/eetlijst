@@ -10,7 +10,7 @@
     "repositories": [
         {
             "type":"composer",
-            "url": "http://packagist.hostnetbv.nl"
+            "url": "https://packagist.hostnetbv.nl"
         }
     ],
     "autoload": {

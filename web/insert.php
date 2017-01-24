@@ -69,5 +69,5 @@ else
 	echo "<script language=\"JavaScript\" type=\"text/javascript\">window.close()</script>";
 }
 	
-mysql_close($rDbConn);
+mysqli_close($rDbConn);
 ?>

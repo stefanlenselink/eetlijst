@@ -1,6 +1,7 @@
 <?
-$query	= mysql_query("SELECT DATE_FORMAT(ratio_from,'%d-%m-%Y') AS ratio_from, DATE_FORMAT(exp_from,'%d-%m-%Y') AS exp_from FROM date"); 
-$obj = mysql_fetch_array($query);
+$rDbConn = connectdb();
+$query	= mysqli_query($rDbConn, "SELECT DATE_FORMAT(ratio_from,'%d-%m-%Y') AS ratio_from, DATE_FORMAT(exp_from,'%d-%m-%Y') AS exp_from FROM date");
+$obj = mysqli_fetch_array($query);
 
 echo ('
 
@@ -13,7 +14,7 @@ echo ('
  <tr>
 	<td class="h2" align="center" height="10"></td>
  </tr>
- <tr>	
+ <tr>
 	<td class="h2" height="74" align="center">
 		<form method="post" name="form1" action="form.php" onSubmit="popupform(this, \'join\')">
 			<table>
@@ -40,7 +41,7 @@ echo ('
  </tr>
  <tr>
  	<td height="10"></td>
- </tr> 
+ </tr>
  <tr>
 	<td class="h1" align="center">Weergave ratio vanaf</td>
  </tr>
@@ -56,7 +57,7 @@ echo ('
  <tr>
  	<td class="h2" align="center">'.$obj[exp_from].'</td>
  </tr>
- 
+
 </table>
 
 <!--   end input   -->

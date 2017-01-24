@@ -22,7 +22,7 @@ v 0.6.4 //12-05-05
 - changed form-layout (css)
 - setcookie() settings changed
 - function check_input($input,$what)
-- function mysql_date($formdate)
+- function mysqli_date($formdate)
 - function validate input emailaddress (javascript)
 
 V 0.6.3 //05-05-05

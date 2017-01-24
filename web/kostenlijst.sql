@@ -210,4 +210,4 @@ CREATE TABLE `users` (
 -- Gegevens worden uitgevoerd voor tabel `users`
 -- 
 
-INSERT INTO `users` VALUES (1, 'Admin', 'Admin', '', '9', 'yes', '0000-00-00', '0000-00-00', '', '', '0000-00-00', '', '', '', '');
+INSERT INTO `users` VALUES (1, 'Admin', 'e3afed0047b08059d0fada10f400c1e5', '', '9', 'yes', '0000-00-00', '0000-00-00', '', '', '0000-00-00', '', '', '', '');

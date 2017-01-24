@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "27119596fc60d60294ad51237fdb86af",
+    "content-hash": "62c2f3f67d4aabb6b7bac11af364d599",
     "packages": [
         {
             "name": "pear-pear.php.net/Auth",
@@ -33,20 +34,14 @@
             "description": "The PEAR::Auth package provides methods for creating an authentication\nsystem using PHP.\n\nCurrently it supports the following storage containers to read/write\nthe login data:\n\n* All databases supported by the PEAR database layer\n* All databases supported by the MDB database layer\n* All databases supported by the MDB2 database layer\n* Plaintext files\n* LDAP servers\n* POP3 servers\n* IMAP servers\n* vpopmail accounts (Using either PECL vpopmail or PEAR Net_Vpopmaild)\n* RADIUS\n* SAMBA password files\n* SOAP (Using either PEAR SOAP package or PHP5 SOAP extension)\n* PEAR website\n* Kerberos V servers\n* SAP servers"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">=5.3"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }
